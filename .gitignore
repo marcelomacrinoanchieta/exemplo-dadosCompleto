@@ -1,0 +1,62 @@
+# ==========================================================================
+# .gitignore — o que NÃO deve ir para o repositório
+#
+# Tudo o que está listado aqui o Git passa a ignorar: não aparece em
+# "git status" e nunca é enviado com "git push".
+# ==========================================================================
+
+# --------------------------------------------------------------------------
+# Dependências — o motivo principal deste arquivo
+#
+# A node_modules tem milhares de arquivos e é sempre recriada com
+# "npm install", a partir do package.json. Enviá-la é desnecessário,
+# deixa o repositório pesado e ainda causa conflito entre sistemas.
+# --------------------------------------------------------------------------
+node_modules/
+
+# --------------------------------------------------------------------------
+# Resultado do build — também é gerado, não escrito à mão
+# --------------------------------------------------------------------------
+dist/
+build/
+
+# --------------------------------------------------------------------------
+# Arquivos de log e de erro
+# --------------------------------------------------------------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --------------------------------------------------------------------------
+# Segredos: senhas, chaves e configurações locais.
+# Nunca envie um .env para o Git.
+# --------------------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+
+# --------------------------------------------------------------------------
+# Cache de ferramentas
+# --------------------------------------------------------------------------
+.vite/
+.cache/
+*.tsbuildinfo
+
+# --------------------------------------------------------------------------
+# Arquivos criados pelo sistema operacional
+# --------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --------------------------------------------------------------------------
+# Configurações pessoais do editor
+#
+# São preferências de cada pessoa, não do projeto. A exceção é o
+# extensions.json, que sugere extensões úteis para quem clonar o projeto.
+# --------------------------------------------------------------------------
+.vscode/*
+!.vscode/extensions.json
+.idea/
