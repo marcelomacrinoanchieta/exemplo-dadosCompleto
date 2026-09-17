@@ -1,0 +1,145 @@
+/* Folha de estilo simples, só para a página ficar legível.
+   Não é o assunto do exercício: o foco é o import e os laços. */
+
+:root {
+  --azul: #0a468c;
+  --amarelo: #fcc419;
+  --vermelho: #c62828;
+  --verde: #1f7a4d;
+  --fundo: #f4f6fa;
+  --superficie: #ffffff;
+  --borda: #dde3ec;
+  --texto: #1c2430;
+  --texto-suave: #5a6676;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --azul: #5b9bf0;
+    --vermelho: #ff8a80;
+    --verde: #7fd1a6;
+    --fundo: #0f151d;
+    --superficie: #182029;
+    --borda: #2b3644;
+    --texto: #e8edf4;
+    --texto-suave: #9aa7b8;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--texto);
+  background: var(--fundo);
+}
+
+.interno {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.cabecalho {
+  background: linear-gradient(135deg, #0a468c, #073465);
+  color: #fff;
+  padding: 2rem 0 2.5rem;
+  border-bottom: 4px solid var(--amarelo);
+  margin-bottom: 1.5rem;
+}
+.cabecalho h1 { margin: 0 0 0.25rem; font-size: 1.6rem; }
+.cabecalho p { margin: 0; color: rgba(255, 255, 255, 0.85); font-size: 0.95rem; }
+.cabecalho code { background: rgba(255, 255, 255, 0.15); padding: 1px 5px; border-radius: 4px; }
+
+.cartao {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+h2 {
+  font-size: 1.05rem;
+  color: var(--azul);
+  margin: 0 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+h2::before {
+  content: "";
+  width: 4px;
+  height: 1.1em;
+  border-radius: 2px;
+  background: var(--amarelo);
+}
+
+code {
+  font-family: Consolas, "SF Mono", monospace;
+  font-size: 0.92em;
+  color: var(--azul);
+}
+
+.ajuda { color: var(--texto-suave); font-size: 0.9rem; margin: 0 0 1rem; }
+
+.destaque {
+  background: var(--fundo);
+  border-left: 4px solid var(--amarelo);
+  border-radius: 6px;
+  padding: 0.6rem 0.9rem;
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+/* Parte 1 */
+.lista-cores { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.cor {
+  font-family: Consolas, monospace;
+  font-size: 0.88rem;
+  background: var(--fundo);
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+}
+
+/* Parte 2 */
+.numeros { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.75rem; }
+.numeros li {
+  background: var(--fundo);
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  padding: 0.6rem 0.9rem;
+}
+.numeros span { display: block; font-size: 1.6rem; font-weight: 700; color: var(--azul); }
+.numeros small { color: var(--texto-suave); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.72rem; }
+
+/* Parte 3 */
+.rolagem { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th {
+  background: var(--azul);
+  color: #fff;
+  text-align: left;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+td { padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--borda); }
+tbody tr:hover { background: var(--fundo); }
+.linha--atencao td:nth-child(5) { color: var(--vermelho); font-weight: 700; }
+
+.etiqueta {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.etiqueta--ativo { color: var(--verde); background: rgba(31, 122, 77, 0.12); }
+.etiqueta--inativo { color: var(--texto-suave); background: var(--fundo); border: 1px solid var(--borda); }
+
+.rodape { color: var(--texto-suave); font-size: 0.85rem; text-align: center; padding: 1rem 0 2.5rem; }

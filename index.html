@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Importando dados e mostrando com laços</title>
+    <link rel="stylesheet" href="./css/estilo.css" />
+  </head>
+
+  <body>
+    <header class="cabecalho">
+      <div class="interno">
+        <h1>Dados e laços de repetição</h1>
+        <p>Os dados moram em <code>dados.ts</code>. Quem os mostra é o <code>mostraDados.ts</code>.</p>
+      </div>
+    </header>
+
+    <main class="interno">
+      <!-- PARTE 1 ------------------------------------------------------- -->
+      <section class="cartao">
+        <h2>1. Array simples, com <code>for</code> clássico</h2>
+        <p class="ajuda">
+          O <code>for</code> com índice é a escolha certa aqui, porque queremos
+          mostrar a <strong>posição</strong> de cada cor. Total:
+          <strong id="total-cores">0</strong> cores.
+        </p>
+        <ul class="lista-cores" id="lista-cores"></ul>
+      </section>
+
+      <!-- PARTE 2 ------------------------------------------------------- -->
+      <section class="cartao">
+        <h2>2. Array de números, com <code>for...of</code></h2>
+        <p class="ajuda">
+          Quando a posição não importa, o <code>for...of</code> é mais legível:
+          ele entrega o valor direto.
+        </p>
+        <p class="destaque" id="notas-lista">—</p>
+        <ul class="numeros">
+          <li><span id="notas-soma">0</span><small>soma</small></li>
+          <li><span id="notas-media">0</span><small>média</small></li>
+          <li><span id="notas-maior">0</span><small>maior nota</small></li>
+        </ul>
+      </section>
+
+      <!-- PARTE 3 ------------------------------------------------------- -->
+      <section class="cartao">
+        <h2>3. Array de objetos, com <code>for...of</code></h2>
+        <p class="ajuda">
+          Cada volta do laço vira uma linha da tabela. As linhas em vermelho são
+          de alunos com nota abaixo de 7. Total:
+          <strong id="total-alunos">0</strong> alunos.
+        </p>
+        <div class="rolagem">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Curso</th>
+                <th>Idade</th>
+                <th>Nota</th>
+                <th>Situação</th>
+              </tr>
+            </thead>
+            <!-- começa vazio: quem preenche é o mostraDados.ts -->
+            <tbody id="corpo-tabela"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PARTE 4 ------------------------------------------------------- -->
+      <section class="cartao">
+        <h2>4. <code>while</code>: parar assim que encontrar</h2>
+        <p class="ajuda">
+          O <code>while</code> não percorre a lista inteira: ele para no primeiro
+          aluno que satisfaz a condição.
+        </p>
+        <p class="destaque" id="resultado-while">—</p>
+      </section>
+
+      <!-- PARTE 5 ------------------------------------------------------- -->
+      <section class="cartao">
+        <h2>5. Bônus: o mesmo percurso, sem escrever o laço</h2>
+        <p class="ajuda">
+          <code>map</code> e <code>filter</code> percorrem a lista igual ao
+          <code>for...of</code> — o laço já vem pronto dentro deles.
+        </p>
+        <p><strong>map</strong> → <span id="nomes-com-map">—</span></p>
+        <p><strong>filter</strong> → <span id="aprovados-com-filter">—</span></p>
+      </section>
+
+      <p class="rodape">
+        Abra o console do navegador com <strong>F12</strong>: cada laço também
+        imprime o que está percorrendo.
+      </p>
+    </main>
+
+    <script type="module" src="./src/mostraDados.ts"></script>
+  </body>
+</html>
